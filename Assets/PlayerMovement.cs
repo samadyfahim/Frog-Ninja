@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 
 {
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,18 +14,25 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         PlayerJump();
+        PlayerGoLeft();
     }
 
-    void PlayerJump()
+    private void PlayerJump()
     {
-        if (Input.GetKey("w"))
+        if (Input.GetButtonUp("Jump"))
         {
-            rb.velocity = new Vector3(0, 12, 0);
+            rb.velocity = new Vector2(0, 12);
         }
     }
+    private void PlayerGoLeft()
+    {
+        float XDir = Input.GetAxis("Horizontal");
+        float forword = XDir * 10f;
+        rb.velocity = new Vector2(forword, rb.velocity.y);
+    }
 
-  
+   
 }
