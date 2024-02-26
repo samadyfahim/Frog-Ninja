@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey("w"))
         {
-            rb.velocity = new Vector3(0, 10, 0);
+            rb.velocity = new Vector3(0, 12, 0);
         }
     }
 
