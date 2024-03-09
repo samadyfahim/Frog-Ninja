@@ -7,17 +7,16 @@ public class PlayerMovement : MonoBehaviour
 
 {
     private Rigidbody2D rb;
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();  
     }
 
-    // Update is called once per frame
+
     private void Update()
     {
         PlayerJump();
-        PlayerGoLeft();
+        PlayerMoveLeftRight();
     }
 
     private void PlayerJump()
@@ -27,11 +26,11 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(0, 12);
         }
     }
-    private void PlayerGoLeft()
+    private void PlayerMoveLeftRight()
     {
         float XDir = Input.GetAxis("Horizontal");
-        float forword = XDir * 10f;
-        rb.velocity = new Vector2(forword, rb.velocity.y);
+        float move = XDir * 10f;
+        rb.velocity = new Vector2(move, rb.velocity.y);
     }
 
    
