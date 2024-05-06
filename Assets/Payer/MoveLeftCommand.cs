@@ -15,6 +15,6 @@ public class MoveLeftCommand : Command
 
     public void Execute()
     {
-        rb.velocity = new Vector2(-move, rb.velocity.y);
+        rb.velocity = new Vector2(move, rb.velocity.y);
     }
 }

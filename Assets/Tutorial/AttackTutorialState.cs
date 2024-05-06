@@ -4,16 +4,7 @@ using UnityEngine;
 
 public class AttackTutorialState : TutorialState
 {
-    public AttackTutorialState(TutorialUIManager tutorialUIManager) : base(tutorialUIManager) 
-    { 
-
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AttackTutorialState(TutorialUIManager tutorialUIManager) : base(tutorialUIManager) { }
 
     public override void Enter()
     {

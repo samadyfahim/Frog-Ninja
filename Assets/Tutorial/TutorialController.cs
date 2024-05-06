@@ -7,37 +7,25 @@ using UnityEngine.SceneManagement;
 public class TutorialController : MonoBehaviour
 {
     [SerializeField] private TutorialUIManager tutorialUIManager;
-    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private PlayerCommandHandler playerCommandHandler;
     
     private TutorialState currentState;
 
-    private void Start()
+    private void Start() 
     {
-        if (tutorialUIManager == null)
-        {
-            Debug.LogError("TutorialUIManager component not found on the TutorialController's GameObject.");
-            return;
-        }
-        if (playerMovement == null)
-        {
-            Debug.LogError("PlayerMovement component not found in the scene.");
-            return;
-        }
-
         StartTutorial();
     }
 
-    private void StartTutorial()
+    private void StartTutorial() 
     {
         currentState = new JumpTutorialState(tutorialUIManager);
         currentState.Enter();
         //DisablePlayerMovement();
     }
 
-    public void TransitionToNextState()
+    public void TransitionToNextState() 
     {
-        switch (currentState)
-        {
+        switch (currentState) {
             case JumpTutorialState _:
                 Debug.Log("jump started");
                 currentState = new MoveLeftTutorialState(tutorialUIManager);
@@ -57,28 +45,27 @@ public class TutorialController : MonoBehaviour
         currentState.Enter();
        // EnablePlayerMovement();
     }
-    private void DisablePlayerMovement()
+    private void DisablePlayerMovement() 
     {
-        if (playerMovement != null)
+        if (playerCommandHandler != null) 
         {
-            playerMovement.enabled = false;
+            playerCommandHandler.enabled = false;
         }
     }
-    private void EnablePlayerMovement()
+    private void EnablePlayerMovement() 
     {
-        if (playerMovement != null)
+        if (playerCommandHandler != null) 
         {
-            playerMovement.enabled = true;
+            playerCommandHandler.enabled = true;
         }
     }
 
-    void Update()
+    void Update() 
     {
-        if (currentState != null)
+        if (currentState != null) 
         {
             currentState.Update();
         }
     }
-
 
 }

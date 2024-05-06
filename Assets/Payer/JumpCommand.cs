@@ -5,6 +5,8 @@ using UnityEngine;
 public class JumpCommand : Command
 {
     private Rigidbody2D rb;
+    private int maxJumps = 2;
+    private int jumpsPerformed = 0;
 
     public JumpCommand(Rigidbody2D rb)
     {
@@ -13,6 +15,14 @@ public class JumpCommand : Command
 
     public void Execute()
     {
-        rb.velocity = new Vector2(0, 12);
+        if (jumpsPerformed < maxJumps)
+        {
+            rb.velocity = new Vector2(0, 8);
+            jumpsPerformed++;
+        }
+    }
+    public void ResetJumpCount()
+    {
+        jumpsPerformed = 0;
     }
 }
