@@ -13,8 +13,10 @@ public class JumpTutorialState : TutorialState
 
     public override void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        Debug.Log(Input.GetButtonUp("Jump"));
+        if (Input.GetButtonUp("Jump"))
         {
+            Debug.Log("Transitioning to next state.");
             tutorialUIManager.TransitionToNextState();
         }
     }
@@ -23,10 +25,4 @@ public class JumpTutorialState : TutorialState
     {
 
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-}
+ }

@@ -23,11 +23,7 @@ public class MoveRightTutorialState : TutorialState
     {
 
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
    
 }

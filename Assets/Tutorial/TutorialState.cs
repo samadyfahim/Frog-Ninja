@@ -20,11 +20,7 @@ public abstract class TutorialState
     {
         tutorialUIManager.DisplayInstructions(instructions);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
 
 }
