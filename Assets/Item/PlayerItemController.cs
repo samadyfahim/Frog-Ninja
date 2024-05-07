@@ -8,7 +8,7 @@ public class PlayerItemController : MonoBehaviour
     {
         if (other.CompareTag("Collectible"))
         {
-            ICollectibleItem collectibleItem = other.GetComponent<ICollectibleItem>();
+            CollectibleItem collectibleItem = other.GetComponent<CollectibleItem>();
             if (collectibleItem != null)
             {
                 collectibleItem.Collect();
