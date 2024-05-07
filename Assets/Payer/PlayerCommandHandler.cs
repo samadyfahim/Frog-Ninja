@@ -12,6 +12,8 @@ public class PlayerCommandHandler : MonoBehaviour
     private Command moveLeftCommand;
     private Command moveRightCommand;
     private Rigidbody2D rb;
+
+    private bool isGrounded = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -53,6 +55,32 @@ public class PlayerCommandHandler : MonoBehaviour
     private void ExecuteCommand(Command command)
     {
         command.Execute();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+            JumpCommand jumpCmd = jumpCommand as JumpCommand;
+            if (jumpCmd != null)
+            {
+                jumpCmd.SetGrounded(true);
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+            JumpCommand jumpCmd = jumpCommand as JumpCommand;
+            if (jumpCmd != null)
+            {
+                jumpCmd.SetGrounded(false);
+            }
+        }
     }
 
 

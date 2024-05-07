@@ -7,6 +7,7 @@ public class JumpCommand : Command
     private Rigidbody2D rb;
     private int maxJumps = 2;
     private int jumpsPerformed = 0;
+    private bool isGrounded = false;
 
     public JumpCommand(Rigidbody2D rb)
     {
@@ -15,14 +16,20 @@ public class JumpCommand : Command
 
     public void Execute()
     {
-        if (jumpsPerformed < maxJumps)
+        if (isGrounded || jumpsPerformed < maxJumps)
         {
             rb.velocity = new Vector2(0, 8);
             jumpsPerformed++;
         }
     }
-    public void ResetJumpCount()
+    
+    public void SetGrounded(bool grounded)
     {
-        jumpsPerformed = 0;
+
+        isGrounded = grounded;
+        if (grounded)
+        {
+            jumpsPerformed = 0;
+        }
     }
 }
