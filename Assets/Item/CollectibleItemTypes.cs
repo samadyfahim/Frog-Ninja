@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollectibleItemTypes
 {
-    public enum CollectibleItemType 
+    public enum CollectibleItemType
     {
         Coin,
         Gem

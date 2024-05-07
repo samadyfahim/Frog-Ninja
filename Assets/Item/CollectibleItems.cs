@@ -7,7 +7,7 @@ public static class CollectibleItems
     public static GameObject CreateCollectibleItem(CollectibleItemTypes type, Vector2 position)
     {
         GameObject collectiblePrefab = null;
-
+        /*
         switch (type)
         {
             case CollectibleItemTypes.Coin:
@@ -20,6 +20,7 @@ public static class CollectibleItems
                 Debug.LogError("Unknown collectible item type: " + type);
                 break;
         }
+        */
 
         if (collectiblePrefab != null)
         {

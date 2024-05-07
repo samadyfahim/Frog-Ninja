@@ -11,13 +11,18 @@ public class PlayerCommandHandler : MonoBehaviour
     private Command jumpCommand;
     private Command moveLeftCommand;
     private Command moveRightCommand;
+    private Animator anim;
     private Rigidbody2D rb;
+    private BoxCollider2D boxCollider;
+    [SerializeField]private LayerMask groundLayerMask;
 
     private bool isGrounded = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         jumpCommand = new JumpCommand(rb);
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
 
@@ -44,11 +49,13 @@ public class PlayerCommandHandler : MonoBehaviour
         if (move < 0)
         {
             moveLeftCommand = new MoveLeftCommand(rb, move);
+            transform.localScale = new Vector3(-1, 1, 1);
             ExecuteCommand(moveLeftCommand);
         }
         else if (move > 0)
         {
             moveRightCommand = new MoveRightCommand(rb, move);
+            transform.localScale = Vector3.one;
             ExecuteCommand(moveRightCommand);
         }
     }
@@ -83,5 +90,12 @@ public class PlayerCommandHandler : MonoBehaviour
         }
     }
 
+    /*
+    private bool isGround()
+    {
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0);
+        return raycastHit2D.collider;
+    }
 
+    */
 }
