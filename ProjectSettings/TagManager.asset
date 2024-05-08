@@ -12,7 +12,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
@@ -47,4 +47,7 @@ TagManager:
     locked: 0
   - name: Terrain
     uniqueID: 2741659253
+    locked: 0
+  - name: Item
+    uniqueID: 3803070381
     locked: 0
