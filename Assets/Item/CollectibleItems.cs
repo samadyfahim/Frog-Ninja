@@ -22,6 +22,9 @@ public static class CollectibleItems
             case CollectibleItemTypes.CollectibleItemType.Melon:
                 collectiblePrefab = Resources.Load<GameObject>("Melon");
                 break;
+            case CollectibleItemTypes.CollectibleItemType.IcePotion:
+                collectiblePrefab = Resources.Load<GameObject>("IcePotion");
+                break;
             default:
                 break;
         }

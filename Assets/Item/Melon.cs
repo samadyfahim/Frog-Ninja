@@ -5,6 +5,7 @@ using UnityEngine;
 public class Melon : MonoBehaviour, CollectibleItemInterface
 {
     [SerializeField] private int melonValue;
+    private AudioSource audioSource;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,10 +14,17 @@ public class Melon : MonoBehaviour, CollectibleItemInterface
             Collect();
         }
     }
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void Collect()
     {
+        Debug.Log(audioSource.clip);
         ItemController.instance.AddScore(melonValue);
-        Destroy(gameObject);
+        audioSource.Play();
+        Destroy(gameObject, audioSource.clip.length);
     }
 
 }

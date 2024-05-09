@@ -11,6 +11,8 @@ public class Saw : MonoBehaviour
     private bool moveRight;
     private float right;
     private float left;
+    private bool isFrozen;
+    private float freezeTimer;
 
     private void Awake()
     {
@@ -22,10 +24,23 @@ public class Saw : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        sawMovement();
+        if (!isFrozen)
+        {
+            sawMovement();
+        }
+        else
+        {
+            if (freezeTimer > 0)
+            {
+                freezeTimer -= Time.deltaTime;
+            }
+            else
+            {
+                isFrozen = false;
+            }
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -65,5 +80,11 @@ public class Saw : MonoBehaviour
                 moveRight = true;
             }
         }
+    }
+
+    public void FreezeMovement(float duration)
+    {
+        isFrozen = true;
+        freezeTimer = duration;
     }
 }

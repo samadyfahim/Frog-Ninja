@@ -9,6 +9,7 @@ public class CollectibleItemTypes
         Apple,
         Kiwi,
         Cherry,
-        Melon
+        Melon,
+        IcePotion
     }
 }
