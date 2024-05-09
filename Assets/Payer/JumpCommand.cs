@@ -18,7 +18,7 @@ public class JumpCommand : Command
     {
         if (isGrounded || jumpsPerformed < maxJumps)
         {
-            rb.velocity = new Vector2(0, 8);
+            rb.velocity = new Vector2(0, 10);
             jumpsPerformed++;
         }
     }

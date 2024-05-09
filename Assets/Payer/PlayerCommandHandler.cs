@@ -13,7 +13,6 @@ public class PlayerCommandHandler : MonoBehaviour
     private Command moveRightCommand;
     private Animator anim;
     private Rigidbody2D rb;
-    private BoxCollider2D boxCollider;
     [SerializeField]private LayerMask groundLayerMask;
 
     private bool isGrounded = false;
@@ -22,7 +21,6 @@ public class PlayerCommandHandler : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         jumpCommand = new JumpCommand(rb);
-        boxCollider = GetComponent<BoxCollider2D>();
     }
 
 
@@ -90,12 +88,4 @@ public class PlayerCommandHandler : MonoBehaviour
         }
     }
 
-    /*
-    private bool isGround()
-    {
-        RaycastHit2D raycastHit2D = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.down, 0);
-        return raycastHit2D.collider;
-    }
-
-    */
 }

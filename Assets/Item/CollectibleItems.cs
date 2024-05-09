@@ -4,23 +4,28 @@ using UnityEngine;
 
 public static class CollectibleItems
 {
-    public static GameObject CreateCollectibleItem(CollectibleItemTypes type, Vector2 position)
+    public static GameObject CreateCollectibleItem(CollectibleItemTypes.CollectibleItemType type, Vector2 position)
     {
         GameObject collectiblePrefab = null;
-        /*
+
         switch (type)
         {
-            case CollectibleItemTypes.Coin:
-                collectiblePrefab = Resources.Load<GameObject>("CoinPrefab");
+            case CollectibleItemTypes.CollectibleItemType.Apple:
+                collectiblePrefab = Resources.Load<GameObject>("ApplePrefab");
                 break;
-            case CollectibleItemTypes.Gem:
-                collectiblePrefab = Resources.Load<GameObject>("GemPrefab"); 
+            case CollectibleItemTypes.CollectibleItemType.Kiwi:
+                collectiblePrefab = Resources.Load<GameObject>("KiwiPrefab");
+                break;
+            case CollectibleItemTypes.CollectibleItemType.Cherry:
+                collectiblePrefab = Resources.Load<GameObject>("CherryPrefab");
+                break;
+            case CollectibleItemTypes.CollectibleItemType.Melon:
+                collectiblePrefab = Resources.Load<GameObject>("MelonPrefab");
                 break;
             default:
                 Debug.LogError("Unknown collectible item type: " + type);
                 break;
         }
-        */
 
         if (collectiblePrefab != null)
         {

@@ -6,7 +6,9 @@ public class CollectibleItemTypes
 {
     public enum CollectibleItemType
     {
-        Coin,
-        Gem
+        Apple,
+        Kiwi,
+        Cherry,
+        Melon
     }
 }
