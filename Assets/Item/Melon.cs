@@ -15,7 +15,8 @@ public class Melon : MonoBehaviour, CollectibleItemInterface
     }
     public void Collect()
     {
-        GameManager.instance.AddScore(melonValue);
+        ItemController.instance.AddScore(melonValue);
         Destroy(gameObject);
     }
+
 }

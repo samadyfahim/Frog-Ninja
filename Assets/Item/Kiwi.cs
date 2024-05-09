@@ -15,7 +15,7 @@ public class Kiwi : MonoBehaviour, CollectibleItemInterface
     }
     public void Collect()
     {
-        GameManager.instance.AddScore(kiwiValue);
+        ItemController.instance.AddScore(kiwiValue);
         Destroy(gameObject);
     }
 }

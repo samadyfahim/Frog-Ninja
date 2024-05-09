@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class ItemController : MonoBehaviour
 {
-    public static GameManager instance;
+    public static ItemController instance;
 
     private int score = 0;
 

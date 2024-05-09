@@ -14,7 +14,7 @@ public class Cherry : MonoBehaviour, CollectibleItemInterface
     }
     public void Collect()
     {
-        GameManager.instance.AddScore(charryValue);
+        ItemController.instance.AddScore(charryValue);
         Destroy(gameObject);
     }
 }

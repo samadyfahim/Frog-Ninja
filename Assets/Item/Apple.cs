@@ -15,7 +15,7 @@ public class Apple : MonoBehaviour, CollectibleItemInterface
     }
     public void Collect()
     {
-        GameManager.instance.AddScore(appleValue);
+        ItemController.instance.AddScore(appleValue);
         Destroy(gameObject);
     }
 }
