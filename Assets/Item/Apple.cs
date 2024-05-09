@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Apple : MonoBehaviour, CollectibleItemInterface
 {
-    [SerializeField] private int appleValue = 3;
+    [SerializeField] private int appleValue;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

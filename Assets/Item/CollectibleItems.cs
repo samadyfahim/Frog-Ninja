@@ -23,7 +23,6 @@ public static class CollectibleItems
                 collectiblePrefab = Resources.Load<GameObject>("Melon");
                 break;
             default:
-                Debug.LogError("Unknown collectible item type: " + type);
                 break;
         }
 

@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ItemController : MonoBehaviour
 {
     public static ItemController instance;
+    [SerializeField] private TextMeshProUGUI scoreText;
 
     private int score = 0;
 
@@ -24,5 +26,10 @@ public class ItemController : MonoBehaviour
     public void AddScore(int amount)
     {
         score += amount;
+        UpdateScoreDisplay();
+    }
+    private void UpdateScoreDisplay()
+    {
+        scoreText.text = "Score: " + score;
     }
 }
