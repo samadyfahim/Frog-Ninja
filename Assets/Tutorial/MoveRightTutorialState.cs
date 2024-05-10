@@ -19,11 +19,4 @@ public class MoveRightTutorialState : TutorialState
         }
     }
 
-    public override void Exit()
-    {
-
-    }
-
-
-   
 }

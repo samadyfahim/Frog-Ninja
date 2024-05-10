@@ -17,13 +17,8 @@ public class CollectItemTutorialState : TutorialState
             tutorialUIManager.TransitionToNextState();
         }
     }
-
-    public override void Exit()
-    {
-    }
     public static void OnItemCollected()
     {
         itemCollected = true;
-        Debug.Log("item collected");
     }
 }

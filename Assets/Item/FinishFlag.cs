@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishFlag : MonoBehaviour
 {
@@ -8,7 +9,9 @@ public class FinishFlag : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            LevelController.Instance.LoadNextLevel(); 
+            LevelController.Instance.UnlockLevel(2);
+            LevelController.Instance.LoadNextLevel();
+            
         }
     }
 }

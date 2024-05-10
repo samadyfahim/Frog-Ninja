@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class Apple : MonoBehaviour, CollectibleItemInterface
 {
     [SerializeField] private int appleValue;

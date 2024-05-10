@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class LevelButton : MonoBehaviour
 {
-    public int levelNumber;
+    private int levelNumber;
     private Button button;
 
     void OnEnable()

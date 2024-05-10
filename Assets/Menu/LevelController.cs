@@ -5,9 +5,7 @@ using System.Collections.Generic;
 public class LevelController : MonoBehaviour
 {
     public static LevelController Instance;
-
-
-    public int unlockedLevel = 0;
+    [SerializeField] private int unlockedLevel = 0;
 
 
     void Awake()

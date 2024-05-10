@@ -30,15 +30,7 @@ public class IcePotion : MonoBehaviour, CollectibleItemInterface
         if (sawObject != null)
         {
             Saw saw = sawObject.GetComponent<Saw>();
-            if (saw != null)
-            {
-                saw.FreezeMovement(icePotionFreezeTime);
-            }
+            saw.FreezeMovement(icePotionFreezeTime);
         }
-        else
-        {
-            Debug.LogWarning("No Saw object found in the scene.");
-        }
-
     }
 }

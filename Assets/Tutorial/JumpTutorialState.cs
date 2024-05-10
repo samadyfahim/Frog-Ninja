@@ -13,7 +13,6 @@ public class JumpTutorialState : TutorialState
 
     public override void Update()
     {
-        Debug.Log(Input.GetButtonUp("Jump"));
         if (Input.GetButtonUp("Jump"))
         {
             Debug.Log("Transitioning to next state.");
@@ -21,8 +20,4 @@ public class JumpTutorialState : TutorialState
         }
     }
 
-    public override void Exit()
-    {
-
-    }
  }

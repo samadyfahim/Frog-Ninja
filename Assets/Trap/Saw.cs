@@ -42,16 +42,13 @@ public class Saw : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            
-           other.GetComponent<PlayerHealth>().Die();
-           Debug.Log("Player died");
+            collision.GetComponent<PlayerHealth>().Die();
 
         }
-        
     }
 
     private void sawMovement()

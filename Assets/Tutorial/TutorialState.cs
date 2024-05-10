@@ -14,7 +14,6 @@ public abstract class TutorialState
 
     public abstract void Enter();
     public abstract void Update();
-    public abstract void Exit();
 
     protected void DisplayInstructions(string instructions)
     {

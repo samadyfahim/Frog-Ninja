@@ -18,7 +18,6 @@ public class TutorialUIManager : MonoBehaviour
        
     }
 
-
     public void DisplayInstructions(string instructions)
     {
         instructionsText.text = instructions;
@@ -26,12 +25,8 @@ public class TutorialUIManager : MonoBehaviour
 
     public void TransitionToNextState()
     {
-        
-        if (tutorialController != null)
-        {
-            tutorialController.TransitionToNextState();
-        }
-       
+        tutorialController.TransitionToNextState();
+
     }
 
  
