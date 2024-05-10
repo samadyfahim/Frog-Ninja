@@ -7,9 +7,9 @@ public class Melon : MonoBehaviour, CollectibleItemInterface
     [SerializeField] private int melonValue;
     private AudioSource audioSource;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             Collect();
         }

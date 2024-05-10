@@ -35,9 +35,9 @@ public class TutorialController : MonoBehaviour
                 currentState = new MoveRightTutorialState(tutorialUIManager);
                 break;
             case MoveRightTutorialState _:
-                currentState = new AttackTutorialState(tutorialUIManager);
+                currentState = new CollectItemTutorialState(tutorialUIManager);
                 break;
-            case AttackTutorialState _:
+            case CollectItemTutorialState _:
                 SceneManager.LoadScene("Level1");
                 break;
         }

@@ -10,6 +10,7 @@ public class CollectibleItemTypes
         Kiwi,
         Cherry,
         Melon,
-        IcePotion
+        IcePotion, 
+        FinishFlag
     }
 }

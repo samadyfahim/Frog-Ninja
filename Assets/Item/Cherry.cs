@@ -6,9 +6,9 @@ public class Cherry : MonoBehaviour, CollectibleItemInterface
 {
     [SerializeField] private int charryValue;
     private AudioSource audioSource;
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             Collect();
         }

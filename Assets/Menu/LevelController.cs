@@ -6,7 +6,9 @@ public class LevelController : MonoBehaviour
 {
     public static LevelController Instance;
 
+
     public int unlockedLevel = 0;
+
 
     void Awake()
     {
@@ -43,6 +45,16 @@ public class LevelController : MonoBehaviour
     private void LoadProgress()
     {
         unlockedLevel = PlayerPrefs.GetInt("HighestUnlockedLevel", 0);
+    }
+    public void LoadNextLevel()
+    {
+        int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextLevelIndex = currentLevelIndex + 1;
+
+        if (nextLevelIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextLevelIndex);
+        }
     }
     public void LoadLevel(int levelNumber)
     {
